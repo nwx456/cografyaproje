@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/components/LanguageProvider";
-import { Navbar } from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,9 +18,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "FIRST STEP to Protect | Akustik Güvenlik Koridoru",
+  title: "Yangın frekans oyunu",
   description:
-    "Orman yangınlarında hayvanların yanlış yöne kaçmasını engelleyen, IoT tabanlı Akustik Güvenlik Koridoru projesi.",
+    "Orman yangınında akustik pod frekansına hangi hayvanların kaçacağını tahmin et.",
 };
 
 export default function RootLayout({
@@ -35,10 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} min-h-screen bg-[#0a0a0a] font-sans text-[#ededed] antialiased`}
       >
-        <LanguageProvider>
-          <Navbar />
-          {children}
-        </LanguageProvider>
+        {children}
       </body>
     </html>
   );
